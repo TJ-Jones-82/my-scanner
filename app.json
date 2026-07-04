@@ -1,0 +1,29 @@
+{
+  "expo": {
+    "name": "My Scanner",
+    "slug": "my-scanner",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "scheme": "myscanner",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.trjon.myscanner"
+    },
+    "android": {
+      "package": "com.trjon.myscanner",
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "permissions": []
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}
