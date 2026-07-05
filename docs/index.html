@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#101827" />
+    <meta name="description" content="A mobile-friendly launcher for Broadcastify Calls playlists." />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="My Scanner" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="./icons/icon-192.png" />
+    <link rel="icon" href="./icons/icon-192.png" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>My Scanner</title>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">BROADCASTIFY CALLS</p>
+          <h1>My Scanner</h1>
+        </div>
+        <button class="icon-button" id="installButton" type="button" aria-label="Install My Scanner">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M12 3v11m0 0 4-4m-4 4-4-4M5 17v3h14v-3" />
+          </svg>
+        </button>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="signal" aria-hidden="true">
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <div>
+            <p class="status"><span></span> Ready anywhere</p>
+            <h2>Your scanner, one tap away.</h2>
+            <p>
+              Sign in on Broadcastify to see the playlists currently attached to your account.
+            </p>
+          </div>
+          <a
+            class="primary-button"
+            href="https://www.broadcastify.com/calls/playlists/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="play-dot">▶</span>
+            Open my playlists
+          </a>
+        </section>
+
+        <section class="section-heading">
+          <div>
+            <p class="eyebrow dark">QUICK ACCESS</p>
+            <h2>Saved playlists</h2>
+          </div>
+          <button class="add-button" id="openAddButton" type="button">
+            <span aria-hidden="true">＋</span> Add
+          </button>
+        </section>
+
+        <section class="playlist-list" id="playlistList" aria-live="polite"></section>
+
+        <section class="empty-state" id="emptyState">
+          <div class="empty-icon" aria-hidden="true">⌁</div>
+          <h3>No shortcuts yet</h3>
+          <p>
+            Open a playlist on Broadcastify, copy its web address, then add it here for one-tap access.
+          </p>
+          <button class="secondary-button" id="emptyAddButton" type="button">Add a shortcut</button>
+        </section>
+
+        <aside class="info-card">
+          <div class="info-icon" aria-hidden="true">i</div>
+          <div>
+            <h3>About playlist updates</h3>
+            <p>
+              “Open my playlists” always shows Broadcastify’s current list. Saved shortcuts stay on
+              this device until you remove them.
+            </p>
+          </div>
+        </aside>
+      </main>
+
+      <footer>
+        <span>My Scanner</span>
+        <span>Installable web app</span>
+      </footer>
+    </div>
+
+    <dialog id="shortcutDialog">
+      <form method="dialog" id="shortcutForm">
+        <div class="dialog-header">
+          <div>
+            <p class="eyebrow dark">QUICK ACCESS</p>
+            <h2>Add playlist</h2>
+          </div>
+          <button class="close-button" value="cancel" formnovalidate aria-label="Close">×</button>
+        </div>
+
+        <label for="playlistName">Button name</label>
+        <input
+          id="playlistName"
+          name="playlistName"
+          type="text"
+          maxlength="80"
+          placeholder="Example: County Fire & EMS"
+          autocomplete="off"
+          required
+        />
+
+        <label for="playlistUrl">Broadcastify playlist address</label>
+        <input
+          id="playlistUrl"
+          name="playlistUrl"
+          type="url"
+          inputmode="url"
+          placeholder="https://www.broadcastify.com/calls/playlists/?uuid=…"
+          autocomplete="off"
+          required
+        />
+        <p class="field-help">Copy the address after opening the individual playlist.</p>
+        <p class="form-error" id="formError" role="alert"></p>
+
+        <button class="primary-button dialog-submit" value="default" type="submit">
+          Save playlist
+        </button>
+      </form>
+    </dialog>
+
+    <dialog id="installDialog">
+      <div class="dialog-header">
+        <div>
+          <p class="eyebrow dark">INSTALL</p>
+          <h2>Add to your phone</h2>
+        </div>
+        <button class="close-button" id="closeInstallButton" aria-label="Close">×</button>
+      </div>
+      <ol class="install-steps">
+        <li>Open your browser’s Share or menu button.</li>
+        <li>Choose <strong>Add to Home Screen</strong> or <strong>Install app</strong>.</li>
+        <li>Tap <strong>Add</strong> or <strong>Install</strong>.</li>
+      </ol>
+    </dialog>
+
+    <template id="playlistTemplate">
+      <article class="playlist-card">
+        <a class="playlist-link" target="_blank" rel="noopener noreferrer">
+          <span class="playlist-play" aria-hidden="true">▶</span>
+          <span class="playlist-copy">
+            <strong></strong>
+            <small>Broadcastify Calls</small>
+          </span>
+          <span class="chevron" aria-hidden="true">›</span>
+        </a>
+        <button class="delete-button" type="button" aria-label="Remove playlist shortcut">Remove</button>
+      </article>
+    </template>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>

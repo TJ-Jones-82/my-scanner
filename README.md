@@ -4,6 +4,9 @@ A small Expo/React Native app that signs in through Broadcastify's own web
 page, discovers the signed-in user's Calls playlists, and creates one mobile
 button per playlist.
 
+The repository also contains an installable, mobile-friendly web version in
+`docs/`. GitHub Pages deploys it automatically from `main`.
+
 ## What it does
 
 - Keeps the Broadcastify username and password inside Broadcastify's web form.
@@ -22,6 +25,18 @@ button per playlist.
 2. Otherwise, install dependencies with `pnpm install` (or `npm install`) and
    run `pnpm start`.
 3. Scan the QR code with Expo Go, or press `a` for Android / `i` for iOS.
+
+## Installable web version
+
+Open the GitHub Pages address on a phone, then choose **Install app** or
+**Add to Home Screen** from the browser menu. The PWA opens the always-current
+Broadcastify playlist page and stores optional one-tap playlist shortcuts on
+the device.
+
+Web browser security prevents a static GitHub Pages site from reading a
+signed-in page on another domain. Automatic playlist extraction therefore
+remains a feature of the native app; a fully automatic web version requires
+the approved Broadcastify Calls Client API.
 
 ## Important product note
 
