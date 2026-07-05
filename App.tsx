@@ -3,6 +3,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import {
   ActivityIndicator,
   AppState,
+  Image,
   Linking,
   Pressable,
   RefreshControl,
@@ -201,9 +202,18 @@ export default function App() {
       {screen.kind === 'dashboard' ? (
         <>
           <View style={styles.header}>
-            <View>
-              <Text style={styles.eyebrow}>BROADCASTIFY CALLS</Text>
-              <Text style={styles.title}>My Playlists</Text>
+            <View style={styles.headerBrand}>
+              <Image
+                accessibilityLabel="Arcadia Reedy Creek Hampton fire station crest"
+                source={require('./assets/icon.png')}
+                style={styles.headerLogo}
+              />
+              <View style={styles.headerCopy}>
+                <Text style={styles.eyebrow}>
+                  ARCADIA | REEDY CREEK | HAMPTON
+                </Text>
+                <Text style={styles.title}>My Playlists</Text>
+              </View>
             </View>
             <Pressable
               accessibilityRole="button"
@@ -397,18 +407,38 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingHorizontal: 20,
-    paddingBottom: 18,
-    paddingTop: 16,
+    borderBottomColor: '#ffd200',
+    borderBottomWidth: 4,
+    paddingBottom: 13,
+    paddingTop: 12,
+  },
+  headerBrand: {
+    alignItems: 'center',
+    flex: 1,
+    flexDirection: 'row',
+    minWidth: 0,
+  },
+  headerLogo: {
+    borderColor: '#ffd200',
+    borderRadius: 14,
+    borderWidth: 2,
+    height: 62,
+    marginRight: 11,
+    width: 62,
+  },
+  headerCopy: {
+    flex: 1,
+    minWidth: 0,
   },
   eyebrow: {
     color: '#ffd200',
-    fontSize: 11,
+    fontSize: 9,
     fontWeight: '800',
-    letterSpacing: 1.8,
+    letterSpacing: 0.8,
   },
   title: {
     color: '#ffffff',
-    fontSize: 30,
+    fontSize: 26,
     fontWeight: '800',
     letterSpacing: -0.7,
     marginTop: 3,
@@ -418,7 +448,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#24170b',
     borderColor: '#8f682b',
     borderRadius: 22,
-    borderWidth: 1,
+    borderWidth: 2,
     height: 44,
     justifyContent: 'center',
     width: 44,
@@ -440,6 +470,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff',
     borderColor: '#d8bd83',
     borderRadius: 20,
+    borderLeftColor: '#c90000',
+    borderLeftWidth: 6,
     borderWidth: 1,
     marginTop: 24,
     paddingHorizontal: 24,
@@ -473,6 +505,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignSelf: 'stretch',
     backgroundColor: '#c90000',
+    borderColor: '#ffd200',
+    borderWidth: 1,
     borderRadius: 13,
     marginTop: 24,
     paddingHorizontal: 18,
@@ -487,13 +521,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignSelf: 'stretch',
     backgroundColor: '#090603',
+    borderColor: '#ffd200',
+    borderWidth: 1,
     borderRadius: 13,
     marginTop: 24,
     paddingHorizontal: 18,
     paddingVertical: 15,
   },
   secondaryButtonText: {
-    color: '#ffffff',
+    color: '#ffd200',
     fontSize: 16,
     fontWeight: '800',
   },
@@ -513,6 +549,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff',
     borderColor: '#d8bd83',
     borderRadius: 15,
+    borderLeftColor: '#c90000',
+    borderLeftWidth: 6,
     borderWidth: 1,
     flexDirection: 'row',
     minHeight: 76,
@@ -531,7 +569,9 @@ const styles = StyleSheet.create({
   },
   playBadge: {
     alignItems: 'center',
-    backgroundColor: '#ffd200',
+    backgroundColor: '#b80000',
+    borderColor: '#ffd200',
+    borderWidth: 2,
     borderRadius: 22,
     height: 44,
     justifyContent: 'center',
@@ -539,7 +579,7 @@ const styles = StyleSheet.create({
     width: 44,
   },
   playBadgeText: {
-    color: '#090603',
+    color: '#ffffff',
     fontSize: 15,
     marginLeft: 2,
   },
@@ -575,6 +615,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     minHeight: 58,
     paddingHorizontal: 12,
+    borderBottomColor: '#ffd200',
+    borderBottomWidth: 3,
   },
   backButton: {
     minWidth: 88,

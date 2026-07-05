@@ -55,16 +55,51 @@ input:focus-visible {
   min-height: 100dvh;
   margin: 0 auto;
   background: var(--paper);
-  box-shadow: 0 0 80px rgb(0 0 0 / 28%);
+  border-right: 1px solid #6f4d1e;
+  border-left: 1px solid #6f4d1e;
+  box-shadow: 0 0 80px rgb(0 0 0 / 42%);
 }
 
 .topbar {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: calc(18px + env(safe-area-inset-top)) 20px 21px;
+  min-height: 100px;
+  padding: calc(12px + env(safe-area-inset-top)) 16px 15px;
   color: var(--white);
-  background: linear-gradient(150deg, #341605, var(--navy));
+  border-bottom: 4px solid #ffd200;
+  background:
+    linear-gradient(90deg, transparent 0 70%, rgb(213 9 9 / 14%)),
+    linear-gradient(150deg, #341605, var(--navy));
+  box-shadow: inset 0 -8px 0 #b80000;
+}
+
+.brand-lockup {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.brand-logo {
+  width: 66px;
+  height: 66px;
+  flex: 0 0 66px;
+  margin-right: 11px;
+  object-fit: cover;
+  border: 2px solid #ffd200;
+  border-radius: 16px;
+  box-shadow:
+    0 0 0 2px #b80000,
+    0 5px 15px rgb(0 0 0 / 45%);
+}
+
+.brand-copy {
+  min-width: 0;
+}
+
+.brand-copy .eyebrow {
+  max-width: 26ch;
 }
 
 .eyebrow {
@@ -88,9 +123,10 @@ p {
 
 h1 {
   margin-bottom: 0;
-  font-size: clamp(1.75rem, 8vw, 2.35rem);
+  font-size: clamp(1.62rem, 7vw, 2.2rem);
   line-height: 1;
   letter-spacing: -0.045em;
+  text-shadow: 0 2px 0 #5c0000;
 }
 
 .icon-button {
@@ -99,7 +135,7 @@ h1 {
   height: 46px;
   padding: 11px;
   color: var(--white);
-  border: 1px solid #8f682b;
+  border: 2px solid #ffd200;
   border-radius: 50%;
   background: var(--navy-soft);
   cursor: pointer;
@@ -123,12 +159,15 @@ main {
   overflow: hidden;
   padding: 24px;
   color: var(--white);
-  border-radius: 22px;
+  border: 2px solid #ffd200;
+  border-radius: 18px;
   background:
     radial-gradient(circle at 100% 0, rgb(255 210 0 / 32%), transparent 42%),
     radial-gradient(circle at 0 100%, rgb(213 9 9 / 32%), transparent 48%),
     linear-gradient(145deg, #3d210e, #080503 75%);
-  box-shadow: 0 16px 38px rgb(36 15 3 / 25%);
+  box-shadow:
+    0 6px 0 #a90000,
+    0 18px 38px rgb(36 15 3 / 28%);
 }
 
 .hero h2 {
@@ -240,6 +279,8 @@ main {
   align-items: end;
   justify-content: space-between;
   margin: 30px 2px 12px;
+  padding-bottom: 9px;
+  border-bottom: 3px solid #d50909;
 }
 
 .section-heading h2 {
@@ -268,9 +309,10 @@ main {
 
 .playlist-card {
   overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  background: var(--white);
+  border: 1px solid #c9a45c;
+  border-left: 6px solid #c90000;
+  border-radius: 13px;
+  background: #fffaf0;
   box-shadow: 0 5px 18px rgb(75 45 12 / 10%);
 }
 
@@ -294,10 +336,11 @@ main {
   margin-right: 13px;
   place-items: center;
   padding-left: 2px;
-  color: var(--orange);
+  color: #ffffff;
   font-size: 0.78rem;
   border-radius: 50%;
-  background: #ffd200;
+  border: 2px solid #ffd200;
+  background: #b80000;
 }
 
 .playlist-copy {
@@ -339,9 +382,11 @@ main {
 .empty-state {
   padding: 28px 23px;
   text-align: center;
-  border: 1px dashed #c9a85e;
-  border-radius: 18px;
-  background: rgb(255 255 255 / 58%);
+  border: 2px dashed #c49a42;
+  border-radius: 16px;
+  background:
+    linear-gradient(135deg, rgb(255 210 0 / 9%), transparent 45%),
+    #fffaf0;
 }
 
 .empty-state[hidden] {
@@ -354,10 +399,11 @@ main {
   height: 52px;
   margin: 0 auto 12px;
   place-items: center;
-  color: var(--orange);
+  color: #ffffff;
   font-size: 2rem;
   border-radius: 50%;
-  background: #ffd200;
+  border: 3px solid #ffd200;
+  background: #b80000;
 }
 
 .empty-state h3,
@@ -373,7 +419,8 @@ main {
 }
 
 .secondary-button {
-  color: var(--white);
+  color: #ffd200;
+  border: 1px solid #ffd200;
   background: var(--navy);
 }
 
@@ -382,8 +429,9 @@ main {
   gap: 13px;
   margin-top: 20px;
   padding: 16px;
-  border: 1px solid #d6ad3c;
-  border-radius: 15px;
+  border: 2px solid #d6ad3c;
+  border-left: 6px solid #c60000;
+  border-radius: 13px;
   background: #fff5c7;
 }
 
@@ -410,15 +458,33 @@ footer {
   color: #c6a96f;
   font-size: 0.72rem;
   background: var(--navy);
+  border-top: 4px solid #c60000;
+  box-shadow: inset 0 3px 0 #ffd200;
+}
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #ffffff;
+  font-weight: 800;
+}
+
+.footer-brand img {
+  width: 28px;
+  height: 28px;
+  border: 1px solid #ffd200;
+  border-radius: 7px;
 }
 
 dialog {
   width: min(calc(100% - 28px), 530px);
   padding: 23px;
   color: var(--ink);
-  border: 0;
-  border-radius: 22px;
-  background: var(--white);
+  border: 2px solid #ffd200;
+  border-top: 7px solid #c60000;
+  border-radius: 17px;
+  background: #fffaf0;
   box-shadow: 0 25px 80px rgb(0 0 0 / 35%);
 }
 
@@ -521,6 +587,24 @@ input:focus {
 
   .playlist-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 390px) {
+  .brand-logo {
+    width: 58px;
+    height: 58px;
+    flex-basis: 58px;
+  }
+
+  .brand-copy .eyebrow {
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+  }
+
+  .icon-button {
+    width: 42px;
+    height: 42px;
   }
 }
 
