@@ -224,13 +224,13 @@ export default function App() {
               <RefreshControl
                 refreshing={refreshing}
                 onRefresh={refreshPlaylists}
-                tintColor="#f59e0b"
+                tintColor="#ffd200"
               />
             }
           >
             {signedIn === null ? (
               <View style={styles.messageCard}>
-                <ActivityIndicator color="#f59e0b" size="large" />
+                <ActivityIndicator color="#ffd200" size="large" />
                 <Text style={styles.messageTitle}>Checking your session…</Text>
               </View>
             ) : !signedIn ? (
@@ -366,7 +366,7 @@ export default function App() {
               startInLoadingState
               renderLoading={() => (
                 <View style={styles.browserLoading}>
-                  <ActivityIndicator color="#f59e0b" size="large" />
+                  <ActivityIndicator color="#ffd200" size="large" />
                 </View>
               )}
               style={styles.browser}
@@ -381,7 +381,7 @@ export default function App() {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: '#101827',
+    backgroundColor: '#090603',
   },
   syncWebView: {
     position: 'absolute',
@@ -393,7 +393,7 @@ const styles = StyleSheet.create({
   },
   header: {
     alignItems: 'center',
-    backgroundColor: '#101827',
+    backgroundColor: '#090603',
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingHorizontal: 20,
@@ -401,13 +401,13 @@ const styles = StyleSheet.create({
     paddingTop: 16,
   },
   eyebrow: {
-    color: '#f59e0b',
+    color: '#ffd200',
     fontSize: 11,
     fontWeight: '800',
     letterSpacing: 1.8,
   },
   title: {
-    color: '#f8fafc',
+    color: '#ffffff',
     fontSize: 30,
     fontWeight: '800',
     letterSpacing: -0.7,
@@ -415,8 +415,8 @@ const styles = StyleSheet.create({
   },
   refreshButton: {
     alignItems: 'center',
-    backgroundColor: '#1e293b',
-    borderColor: '#334155',
+    backgroundColor: '#24170b',
+    borderColor: '#8f682b',
     borderRadius: 22,
     borderWidth: 1,
     height: 44,
@@ -424,12 +424,12 @@ const styles = StyleSheet.create({
     width: 44,
   },
   refreshButtonText: {
-    color: '#f8fafc',
+    color: '#ffffff',
     fontSize: 25,
     marginTop: -2,
   },
   content: {
-    backgroundColor: '#eef2f7',
+    backgroundColor: '#f4ead6',
     flexGrow: 1,
     paddingHorizontal: 18,
     paddingBottom: 34,
@@ -438,32 +438,32 @@ const styles = StyleSheet.create({
   messageCard: {
     alignItems: 'center',
     backgroundColor: '#ffffff',
-    borderColor: '#dbe3ed',
+    borderColor: '#d8bd83',
     borderRadius: 20,
     borderWidth: 1,
     marginTop: 24,
     paddingHorizontal: 24,
     paddingVertical: 30,
-    shadowColor: '#0f172a',
+    shadowColor: '#321906',
     shadowOffset: { width: 0, height: 5 },
     shadowOpacity: 0.08,
     shadowRadius: 18,
     elevation: 3,
   },
   radioIcon: {
-    color: '#f59e0b',
+    color: '#d50909',
     fontSize: 44,
     marginBottom: 10,
   },
   messageTitle: {
-    color: '#172033',
+    color: '#1d1107',
     fontSize: 21,
     fontWeight: '800',
     marginTop: 12,
     textAlign: 'center',
   },
   messageBody: {
-    color: '#64748b',
+    color: '#725c40',
     fontSize: 15,
     lineHeight: 22,
     marginTop: 10,
@@ -472,7 +472,7 @@ const styles = StyleSheet.create({
   primaryButton: {
     alignItems: 'center',
     alignSelf: 'stretch',
-    backgroundColor: '#ea580c',
+    backgroundColor: '#c90000',
     borderRadius: 13,
     marginTop: 24,
     paddingHorizontal: 18,
@@ -486,7 +486,7 @@ const styles = StyleSheet.create({
   secondaryButton: {
     alignItems: 'center',
     alignSelf: 'stretch',
-    backgroundColor: '#172033',
+    backgroundColor: '#090603',
     borderRadius: 13,
     marginTop: 24,
     paddingHorizontal: 18,
@@ -498,7 +498,7 @@ const styles = StyleSheet.create({
     fontWeight: '800',
   },
   countLabel: {
-    color: '#64748b',
+    color: '#725c40',
     fontSize: 13,
     fontWeight: '700',
     letterSpacing: 0.5,
@@ -511,27 +511,27 @@ const styles = StyleSheet.create({
   playlistButton: {
     alignItems: 'center',
     backgroundColor: '#ffffff',
-    borderColor: '#dbe3ed',
+    borderColor: '#d8bd83',
     borderRadius: 15,
     borderWidth: 1,
     flexDirection: 'row',
     minHeight: 76,
     paddingHorizontal: 14,
     paddingVertical: 12,
-    shadowColor: '#0f172a',
+    shadowColor: '#321906',
     shadowOffset: { width: 0, height: 3 },
     shadowOpacity: 0.06,
     shadowRadius: 10,
     elevation: 2,
   },
   playlistButtonPressed: {
-    backgroundColor: '#fff7ed',
-    borderColor: '#fb923c',
+    backgroundColor: '#fff6cf',
+    borderColor: '#ffd200',
     transform: [{ scale: 0.99 }],
   },
   playBadge: {
     alignItems: 'center',
-    backgroundColor: '#ffedd5',
+    backgroundColor: '#ffd200',
     borderRadius: 22,
     height: 44,
     justifyContent: 'center',
@@ -539,25 +539,25 @@ const styles = StyleSheet.create({
     width: 44,
   },
   playBadgeText: {
-    color: '#ea580c',
+    color: '#090603',
     fontSize: 15,
     marginLeft: 2,
   },
   playlistName: {
-    color: '#172033',
+    color: '#1d1107',
     flex: 1,
     fontSize: 16,
     fontWeight: '700',
     lineHeight: 21,
   },
   chevron: {
-    color: '#94a3b8',
+    color: '#9b7740',
     fontSize: 29,
     marginLeft: 8,
     marginTop: -2,
   },
   syncNote: {
-    color: '#7c8a9e',
+    color: '#725c40',
     fontSize: 12,
     marginTop: 18,
     textAlign: 'center',
@@ -571,7 +571,7 @@ const styles = StyleSheet.create({
   },
   browserHeader: {
     alignItems: 'center',
-    backgroundColor: '#101827',
+    backgroundColor: '#090603',
     flexDirection: 'row',
     minHeight: 58,
     paddingHorizontal: 12,
@@ -582,12 +582,12 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
   },
   backButtonText: {
-    color: '#fdba74',
+    color: '#ffd200',
     fontSize: 16,
     fontWeight: '700',
   },
   browserTitle: {
-    color: '#f8fafc',
+    color: '#ffffff',
     flex: 1,
     fontSize: 16,
     fontWeight: '800',

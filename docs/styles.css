@@ -1,15 +1,15 @@
 :root {
   color-scheme: light;
-  --navy: #101827;
-  --navy-soft: #1e293b;
-  --orange: #ea580c;
-  --amber: #f59e0b;
-  --paper: #f2f5f9;
+  --navy: #090603;
+  --navy-soft: #24170b;
+  --orange: #d50909;
+  --amber: #ffd200;
+  --paper: #f4ead6;
   --white: #ffffff;
-  --ink: #172033;
-  --muted: #66758a;
-  --line: #dce4ee;
-  --success: #22c55e;
+  --ink: #1d1107;
+  --muted: #725c40;
+  --line: #d8bd83;
+  --success: #ffd200;
   font-family:
     Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background: var(--paper);
@@ -29,7 +29,7 @@ body {
   min-height: 100%;
   margin: 0;
   background:
-    radial-gradient(circle at 15% -10%, #35445e 0, transparent 32rem),
+    radial-gradient(circle at 15% -10%, #815b24 0, transparent 32rem),
     var(--navy);
 }
 
@@ -46,7 +46,7 @@ a {
 button:focus-visible,
 a:focus-visible,
 input:focus-visible {
-  outline: 3px solid #fdba74;
+  outline: 3px solid #ffd200;
   outline-offset: 3px;
 }
 
@@ -64,12 +64,12 @@ input:focus-visible {
   justify-content: space-between;
   padding: calc(18px + env(safe-area-inset-top)) 20px 21px;
   color: var(--white);
-  background: linear-gradient(150deg, #162238, var(--navy));
+  background: linear-gradient(150deg, #341605, var(--navy));
 }
 
 .eyebrow {
   margin: 0 0 3px;
-  color: #fdba74;
+  color: #ffd200;
   font-size: 0.68rem;
   font-weight: 850;
   letter-spacing: 0.16em;
@@ -99,7 +99,7 @@ h1 {
   height: 46px;
   padding: 11px;
   color: var(--white);
-  border: 1px solid #3a4962;
+  border: 1px solid #8f682b;
   border-radius: 50%;
   background: var(--navy-soft);
   cursor: pointer;
@@ -125,9 +125,10 @@ main {
   color: var(--white);
   border-radius: 22px;
   background:
-    radial-gradient(circle at 100% 0, rgb(245 158 11 / 28%), transparent 42%),
-    linear-gradient(145deg, #23334e, #121b2c 75%);
-  box-shadow: 0 16px 38px rgb(15 23 42 / 18%);
+    radial-gradient(circle at 100% 0, rgb(255 210 0 / 32%), transparent 42%),
+    radial-gradient(circle at 0 100%, rgb(213 9 9 / 32%), transparent 48%),
+    linear-gradient(145deg, #3d210e, #080503 75%);
+  box-shadow: 0 16px 38px rgb(36 15 3 / 25%);
 }
 
 .hero h2 {
@@ -141,7 +142,7 @@ main {
 .hero p:not(.status) {
   max-width: 35rem;
   margin-bottom: 22px;
-  color: #cbd5e1;
+  color: #f4e7cb;
   line-height: 1.5;
 }
 
@@ -150,7 +151,7 @@ main {
   align-items: center;
   gap: 7px;
   margin: 0;
-  color: #bbf7d0;
+  color: #ffe66b;
   font-size: 0.78rem;
   font-weight: 750;
 }
@@ -160,7 +161,7 @@ main {
   height: 8px;
   border-radius: 50%;
   background: var(--success);
-  box-shadow: 0 0 0 5px rgb(34 197 94 / 13%);
+  box-shadow: 0 0 0 5px rgb(255 210 0 / 15%);
 }
 
 .signal {
@@ -177,7 +178,7 @@ main {
 .signal span {
   width: 4px;
   border-radius: 4px;
-  background: #fdba74;
+  background: #ffd200;
 }
 
 .signal span:nth-child(1) {
@@ -214,8 +215,9 @@ main {
 
 .primary-button {
   color: var(--white);
-  background: linear-gradient(135deg, #f97316, #dc4c08);
-  box-shadow: 0 8px 20px rgb(234 88 12 / 28%);
+  border: 1px solid #ffd200;
+  background: linear-gradient(135deg, #ef1717, #ad0000);
+  box-shadow: 0 8px 20px rgb(173 0 0 / 32%);
 }
 
 .hero .primary-button {
@@ -250,8 +252,8 @@ main {
   min-height: 41px;
   padding: 8px 13px;
   color: var(--orange);
-  border: 1px solid #fed7aa;
-  background: #fff7ed;
+  border: 1px solid #e4bd32;
+  background: #fff6cf;
 }
 
 .add-button span {
@@ -269,7 +271,7 @@ main {
   border: 1px solid var(--line);
   border-radius: 16px;
   background: var(--white);
-  box-shadow: 0 5px 18px rgb(15 23 42 / 6%);
+  box-shadow: 0 5px 18px rgb(75 45 12 / 10%);
 }
 
 .playlist-link {
@@ -282,7 +284,7 @@ main {
 }
 
 .playlist-link:active {
-  background: #fff7ed;
+  background: #fff6cf;
 }
 
 .playlist-play {
@@ -295,7 +297,7 @@ main {
   color: var(--orange);
   font-size: 0.78rem;
   border-radius: 50%;
-  background: #ffedd5;
+  background: #ffd200;
 }
 
 .playlist-copy {
@@ -318,26 +320,26 @@ main {
 
 .chevron {
   margin-left: 8px;
-  color: #94a3b8;
+  color: #9b7740;
   font-size: 1.8rem;
 }
 
 .delete-button {
   width: 100%;
   padding: 8px;
-  color: #a53b13;
+  color: #a40000;
   font-size: 0.77rem;
   font-weight: 750;
   border: 0;
-  border-top: 1px solid #f0e5df;
-  background: #fffaf7;
+  border-top: 1px solid #ead5ad;
+  background: #fff8e9;
   cursor: pointer;
 }
 
 .empty-state {
   padding: 28px 23px;
   text-align: center;
-  border: 1px dashed #bdc9d7;
+  border: 1px dashed #c9a85e;
   border-radius: 18px;
   background: rgb(255 255 255 / 58%);
 }
@@ -355,7 +357,7 @@ main {
   color: var(--orange);
   font-size: 2rem;
   border-radius: 50%;
-  background: #ffedd5;
+  background: #ffd200;
 }
 
 .empty-state h3,
@@ -380,9 +382,9 @@ main {
   gap: 13px;
   margin-top: 20px;
   padding: 16px;
-  border: 1px solid #bfdbfe;
+  border: 1px solid #d6ad3c;
   border-radius: 15px;
-  background: #eff6ff;
+  background: #fff5c7;
 }
 
 .info-card p {
@@ -395,17 +397,17 @@ main {
   flex: 0 0 29px;
   height: 29px;
   place-items: center;
-  color: #1d4ed8;
+  color: #ffffff;
   font-weight: 900;
   border-radius: 50%;
-  background: #dbeafe;
+  background: #c60000;
 }
 
 footer {
   display: flex;
   justify-content: space-between;
   padding: 22px 20px calc(22px + env(safe-area-inset-bottom));
-  color: #8390a4;
+  color: #c6a96f;
   font-size: 0.72rem;
   background: var(--navy);
 }
@@ -421,7 +423,7 @@ dialog {
 }
 
 dialog::backdrop {
-  background: rgb(10 17 29 / 72%);
+  background: rgb(9 6 3 / 78%);
   backdrop-filter: blur(3px);
 }
 
@@ -442,12 +444,12 @@ dialog::backdrop {
 .close-button {
   width: 38px;
   height: 38px;
-  color: #64748b;
+  color: #725c40;
   font-size: 1.65rem;
   line-height: 1;
   border: 1px solid var(--line);
   border-radius: 50%;
-  background: #f8fafc;
+  background: #fff8e9;
   cursor: pointer;
 }
 
@@ -463,9 +465,9 @@ input {
   min-height: 50px;
   padding: 12px 13px;
   color: var(--ink);
-  border: 1px solid #c8d3e0;
+  border: 1px solid #cdb37c;
   border-radius: 11px;
-  background: #fbfdff;
+  background: #fffdf7;
 }
 
 input:focus {
